@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<robot name="KMU_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find KMU_robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find KMU_robot_description)/urdf/KMU_robot.trans" />
+<xacro:include filename="$(find KMU_robot_description)/urdf/KMU_robot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0002488091207785133 0.0 0.08268262568707396" rpy="0 0 0"/>
+    <mass value="74.04778359315074"/>
+    <inertia ixx="0.604556" iyy="0.612093" izz="1.072231" ixy="-0.0" iyz="0.0" ixz="-0.001102"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_vel_1">
+  <inertial>
+    <origin xyz="9.650038500203382e-18 -0.030000000000000027 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="3.6992253496019805"/>
+    <inertia ixx="0.003422" iyy="0.004624" izz="0.003422" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.151 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/right_vel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.151 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/right_vel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_vel_1">
+  <inertial>
+    <origin xyz="9.650038500203382e-18 0.030000000000000027 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="3.6992253496019805"/>
+    <inertia ixx="0.003422" iyy="0.004624" izz="0.003422" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.151 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/left_vel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.151 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/left_vel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-9.04691109394067e-18 0.0 0.012499999999999983" rpy="0 0 0"/>
+    <mass value="0.986460093227195"/>
+    <inertia ixx="0.000446" iyy="0.000446" izz="0.000789" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.16" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.16" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find KMU_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="0.0 -0.151 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_vel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 2" type="continuous">
+  <origin xyz="0.0 0.151 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_vel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 3" type="continuous">
+  <origin xyz="0.0 0.0 0.16" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+</robot>
