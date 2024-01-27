@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+?xml version="1.0" ?>
 <robot name="KMU_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find KMU_robot_description)/urdf/materials.xacro" />
@@ -13,14 +13,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -34,14 +34,14 @@
   <visual>
     <origin xyz="-0.0 0.151 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/right_vel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/right_vel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.0 0.151 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/right_vel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/right_vel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -55,14 +55,14 @@
   <visual>
     <origin xyz="-0.0 -0.151 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/left_vel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/left_vel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.151 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/left_vel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/left_vel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -76,14 +76,14 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.16" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.16" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find KMU_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://KMU_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
