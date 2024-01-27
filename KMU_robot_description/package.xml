@@ -4,7 +4,7 @@
 <name>KMU_robot_description</name>
   <version>0.0.0</version>
 <description>The KMU_robot_description package</description>
-  <maintainer email="todo@todo.com">author</maintainer>
+  <maintainer email="romatwobox@mail.ru">author</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>xacro</depend>
