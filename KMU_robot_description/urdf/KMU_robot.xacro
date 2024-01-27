@@ -1,4 +1,4 @@
-?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <robot name="KMU_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find KMU_robot_description)/urdf/materials.xacro" />
